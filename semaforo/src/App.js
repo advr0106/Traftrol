@@ -1,13 +1,47 @@
 import './App.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import firebase from 'firebase/app'
+import 'firebase/auth';
+import 'firebase/firestore';
 
-function App() {
-  const [seconds, setSeconds] = React.useState(50);
-  React.useEffect(() => {
+import {useAuthState} from 'react-firebase-hooks/auth'
+import {useCollectionData} from 'react-firebase-hooks/firestore'
+
+firebase.initializeApp({
+  apiKey: "AIzaSyA4Y6yi8rENqv4Zc-VPiGtHwNg6xgjEie8",
+  authDomain: "traftol-firebase.firebaseapp.com",
+  databaseURL: "https://traftol-firebase-default-rtdb.firebaseio.com",
+  projectId: "traftol-firebase",
+  storageBucket: "traftol-firebase.appspot.com",
+  messagingSenderId: "725951346265",
+  appId: "1:725951346265:web:fd0f5de5042805a0c5e348",
+  measurementId: "G-7JKMVD90RZ"
+})
+
+const App = ({ db = null }) => {
+  const [seconds, setSeconds] = React.useState(5);
+  const circles = document.getElementsByClassName('circle')
+  let activeLight = 0;
+
+  function changeLight() {
+    circles[activeLight].className = 'circle';
+    activeLight++;
+
+    if (activeLight > 2) {
+      activeLight = 0;
+    }
+
+    const currentLight = circles[activeLight]
+
+    currentLight.classList.add(currentLight.getAttribute('color'));
+  }
+
+  useEffect(() => {
     if (seconds > 0) {
       setTimeout(() => setSeconds(seconds - 1), 1000);
     } else {
       setSeconds(50);
+      changeLight();
     }
   });
   return (
@@ -34,25 +68,5 @@ function App() {
     </div>
   );
 }
-const circles = document.getElementsByClassName('circle')
-let activeLight = 0;
-
-setInterval(() => {
-  changeLight();
-}, 1000);
-
-function changeLight() {
-  circles[activeLight].className = 'circle';
-  activeLight++;
-
-  if (activeLight > 2) {
-    activeLight = 0;
-  }
-
-  const currentLight = circles[activeLight]
-
-  currentLight.classList.add(currentLight.getAttribute('color'));
-}
-
 
 export default App;
