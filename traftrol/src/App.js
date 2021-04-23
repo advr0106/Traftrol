@@ -92,7 +92,7 @@ function App() {
   return (
     <div className="App">
       {user ?  (
-        <Hero handleLogout= {handleLogout}/>
+        <Hero handleLogout= {handleLogout}  email= {email} setEmail= {setEmail} />
         ):(
 
      
