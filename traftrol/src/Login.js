@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../src/Img/Logo.png'
 
 const Login = (props) => {
 
@@ -18,7 +19,7 @@ const Login = (props) => {
    return (
    <section  className="login"> 
         <div className="loginContainer">
-            <img src="traftrol\src\Img\Logo.png" className="ImagenLogin" alt="Logo de la Pagina"/> 
+            <img src={logo} className="ImagenLogin" alt="Logo de la Pagina"/> 
            <label>Usuario</label>
            <input type = "text" autoFocus required value={email} onChange= {e => setEmail(e.target.value)}/>
            <p  className="errorMsg">{emailError}</p>

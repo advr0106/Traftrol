@@ -8,14 +8,13 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 
 firebase.initializeApp({
-  apiKey: "AIzaSyA4Y6yi8rENqv4Zc-VPiGtHwNg6xgjEie8",
-  authDomain: "traftol-firebase.firebaseapp.com",
-  databaseURL: "https://traftol-firebase-default-rtdb.firebaseio.com",
-  projectId: "traftol-firebase",
-  storageBucket: "traftol-firebase.appspot.com",
-  messagingSenderId: "725951346265",
-  appId: "1:725951346265:web:65b8d092469dd0a8c5e348",
-  measurementId: "G-2893G080D0"
+  apiKey: "AIzaSyDU-5NsNEckSz5MyoWyn42zpJYOr8Uu3Aw",
+  authDomain: "alwaysvacant.firebaseapp.com",
+  projectId: "alwaysvacant",
+  storageBucket: "alwaysvacant.appspot.com",
+  messagingSenderId: "781758535962",
+  appId: "1:781758535962:web:3ecb880553e83795bb74a3",
+  measurementId: "G-4XLXLCKTZS"
 })
 
 const firestore = firebase.firestore();
@@ -28,7 +27,6 @@ const circles = document.getElementsByClassName('circle')
 function changeLight() {
   circles[activeLight].className = 'circle';
   activeLight++;
-  console.log('Heyyyy12')
 
   if (activeLight > 2) {
     activeLight = 0;
@@ -49,7 +47,6 @@ function App() {
   let activeLight = 0;
   let semaRef = firestore.collection('semaforo').doc(color);
 
-  
 
   useEffect(() => {
     if (seconds > 0) {
