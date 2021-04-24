@@ -1,13 +1,13 @@
 import firebase from 'firebase'
 
 var firebaseConfig = {
-    apiKey: "AIzaSyA4Y6yi8rENqv4Zc-VPiGtHwNg6xgjEie8",
-    authDomain: "traftol-firebase.firebaseapp.com",
-    projectId: "traftol-firebase",
-    storageBucket: "traftol-firebase.appspot.com",
-    messagingSenderId: "725951346265",
-    appId: "1:725951346265:web:fd0f5de5042805a0c5e348",
-    measurementId: "G-7JKMVD90RZ"
+  apiKey: "AIzaSyDU-5NsNEckSz5MyoWyn42zpJYOr8Uu3Aw",
+  authDomain: "alwaysvacant.firebaseapp.com",
+  projectId: "alwaysvacant",
+  storageBucket: "alwaysvacant.appspot.com",
+  messagingSenderId: "781758535962",
+  appId: "1:781758535962:web:3ecb880553e83795bb74a3",
+  measurementId: "G-4XLXLCKTZS"
   };
 
 const fire = firebase.initializeApp(firebaseConfig);
