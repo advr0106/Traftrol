@@ -19,7 +19,10 @@ const Login = (props) => {
    return (
    <section  className="login"> 
         <div className="loginContainer">
+
+        <center>
             <img src={logo} className="ImagenLogin" alt="Logo de la Pagina"/> 
+            </center>
            <label>Usuario</label>
            <input type = "text" autoFocus required value={email} onChange= {e => setEmail(e.target.value)}/>
            <p  className="errorMsg">{emailError}</p>

@@ -76,12 +76,11 @@ const Hero = (props) => {
 
   return (
 
-    <section className="hero">
+    <div className="hero">
       <nav>
         <div className="contain">
-
+        <img src={logo} width="60" />
           <h2>
-            <img src={logo} width="60" />
             Bienvenido a  <span className="Trafword" >
               <b> Traftol </b>
             </span>
@@ -100,34 +99,56 @@ const Hero = (props) => {
 
         <section>
 
-          <div className="App">
+      
             <div className="principal">
 
-
+    
               <h2 className="Semaforotexto">Semáforo Actualmente </h2>
-              <div className="container">
-                <div className="circle" color="red"></div>
-                <div className="circle" color="yellow"></div>
-                <div className="circle" color="green"></div>
-              </div>
+              
+
+        
+                <div className="container">
+                  <div className="circle" color="red"></div>
+                  <div className="circle" color="yellow"></div>
+                  <div className="circle" color="green"></div>
+                </div>
 
 
-            </div>
-            <div className="sticks">
-              <div className="counter">
-                <div className="count">{seconds}</div>
+                <h2 className="Semaforotexto2">Tiempo de Espera</h2>
+              <div className="sticks">
+                <div className="counter">
+                  <div className="count">{seconds}</div>
+                </div>
               </div>
+
+   
             </div>
-            <input type="button" value="Presiona para avisar que cruzarás" onClick={activado}/>
-            <input type="button" value="Presiona para cancelar cruzarás" onClick={cancelar}/>
-            <p>{estado}</p>
+
+            <div className="Segundodiv">
+            <h2 className="Semaforotexto3">Acciones</h2>
+             
+    
+           <input type="button" value="Presiona para avisar que cruzarás" onClick={activado} className="input1"/>
+           <input type="button" value="Presiona para cancelar cruzarás" onClick={cancelar}    className="input2"/> 
+           
+           <p>{estado}</p> 
           </div>
+  
+  
+  
         </section>
+
+    
       </section>
 
-    </section>
+      <footer>
+          <h4>Traftol @All Rights Reseverd 2021</h4>
+      </footer>
+
+    </div>
 
 
+      
 
 
   )
